@@ -108,9 +108,11 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
     <EmbedManifest>false</EmbedManifest>
+    <TargetName>$(ProjectName)_MD</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
     <EmbedManifest>false</EmbedManifest>
+    <TargetName>$(ProjectName)_MD</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -213,7 +215,7 @@
       </AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_ITERATOR_DEBUG_LEVEL=0;OPENGL_VER=44;_MSC_PLATFORM_TOOLSET=$(PlatformToolsetVersion);_DEBUG;_M_X64;_WINDOWS;VC_EXTRA_LEAN;GLEW_STATIC;FTGL_LIBRARY_STATIC;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4250;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
@@ -245,7 +247,7 @@
       </AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;OPENGL_VER=44;_MSC_PLATFORM_TOOLSET=$(PlatformToolsetVersion);_WINDOWS;NDEBUG;GLEW_STATIC;_ITERATOR_DEBUG_LEVEL=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4250;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
