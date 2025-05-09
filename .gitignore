@@ -1,5 +1,3 @@
-release
-debug
 *.manifest
 *.iobj
 *.ipdb

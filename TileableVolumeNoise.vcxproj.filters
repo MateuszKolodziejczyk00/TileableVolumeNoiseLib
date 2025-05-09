@@ -2,12 +2,9 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="TileableVolumeNoise.cpp" />
-    <ClCompile Include="libtarga.c" />
-    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TileableVolumeNoise.h" />
-    <ClInclude Include="libtarga.h" />
     <ClInclude Include="glm\common.hpp">
       <Filter>GLM</Filter>
     </ClInclude>

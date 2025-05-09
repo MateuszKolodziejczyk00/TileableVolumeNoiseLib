@@ -4,6 +4,34 @@
 #include "glm\gtc\noise.hpp"
 #include <math.h>
 
+
+#include "glm\gtc\noise.hpp"
+
+class Tileable3dNoise
+{
+public:
+
+	/// @return Tileable Worley noise value in [0, 1].
+	/// @param p 3d coordinate in [0, 1], being the range of the repeatable pattern.
+	/// @param cellCount the number of cell for the repetitive pattern.
+	static float WorleyNoise(const glm::vec3& p, float cellCount);
+
+	/// @return Tileable Perlin noise value in [0, 1].
+	/// @param p 3d coordinate in [0, 1], being the range of the repeatable pattern.
+	static float PerlinNoise(const glm::vec3& p, float frequency, int octaveCount);
+
+private:
+
+	///
+	/// Worley noise function based on https://www.shadertoy.com/view/Xl2XRR by Marc-Andre Loyer
+	///
+
+	static float hash(float n);
+	static float noise(const glm::vec3& x);
+	static float Cells(const glm::vec3& p, float numCells);
+
+};
+
 // Perlin noise based on GLM http://glm.g-truc.net
 // Worley noise based on https://www.shadertoy.com/view/Xl2XRR by Marc-Andre Loyer
 
@@ -95,5 +123,13 @@ float Tileable3dNoise::PerlinNoise(const glm::vec3& pIn, float frequency, int oc
  }
 
 
+float TileableWorleyNoise3D(float px, float py, float pz, float cellCount)
+{
+	return Tileable3dNoise::WorleyNoise(glm::vec3(px, py, pz), cellCount);
+}
 
+float TileablePerlinNoise3D(float px, float py, float pz, float frequency, int octaveCount)
+{
+	return Tileable3dNoise::PerlinNoise(glm::vec3(px, py, pz), frequency, octaveCount);
+}
 
